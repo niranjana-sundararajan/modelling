@@ -18,10 +18,37 @@
 Default intensity - conditional probability of default over a small time period assuming no default upto this point
 Better fit to the actual model
 
+### RR
+
+Total loss = exposure_at_defualt * loss_given_defualt * probabiltiy_of_defualt\
+             = EAD * LGD * PD\
+In reality we cant say that LGD and PD are independent since any collateral of the CPTY we are trying to sell in the event off loss will have a depressed value once the CPTY has defaulted
+
+In merton model is the At(asset exposure) inc then PD incr
+
+### Vasichek Model
+
 ### Credit Risk Metrics
-1. EFV : Expected Future Value
+
+Reference : https://www.youtube.com/watch?v=Mq2DCM7OFBw&list=PLLR-zVgpbvsWpQRayMwv40SOWJgfboCqr&index=9&ab_channel=finRGB
+![img.png](img.png)
+
+exposure = loss assuming zero recovery if counterparty were to default\
+CE = current_exposure = max(V(today), 0)\
+exposure at t1 = random variable depending on market variables\
+There is a tradeoff b/w calculating most accurate exposures and cost of computation
+So we take the distribution of each exposure V(t) at each of times t's. let v(k) for distribution(eg normal distribution) at time k
+
+![img_1.png](img_1.png)
+
+
+the curve shows the MTM values
+
+let the following metrics describe the 
+
+1. EFV : Expected Future Value - the difference between the CE and EFV can exaplin impact of drift of market variables, impact of assymetric collateral arrangements. 
 2. EE: Expected Exposure
-2. PFE: Positive Future Exposure - helps setting credit limit - like VAR
+2. PFE: Potential Future Exposure - helps setting credit limit - like VAR - under a certain confidence limit of alpha find the exposure that lies beyond this confidence limit
 3. EPE : Expected positive exposure - average amount the CPTY would owe if we defualt at a  time t - Input to CVA
 4. ENE : Expected positive exposure - average amount  I would owe if CPTY defualt at a time t - Input to DVA
 
