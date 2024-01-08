@@ -30,7 +30,20 @@ Yi = maybe basic stochastic process like Random Walk or sample from a Normal dis
 W(i/n) = current state\
 W(i-1/n) = previous state
 
+## Geometric Brownian Motion
+A stochastic process {S(t),t≥0} is said to follow Geometric Brownian Motion if it satisfies the stochastic differential equation (SDE):
 
+dS(t)=μS(t)dt+σS(t)dW(t)
+
+S(t) is the asset price at time t.
+
+μ is the drift parameter, representing the average rate of return.
+σ is the volatility parameter, representing the standard deviation of the asset's returns.
+W(t) is a standard Brownian motion.
+
+Solution to the SDE:
+
+The solution to the SDE is given by the geometric Brownian motion formula:
 
 
 Links:
